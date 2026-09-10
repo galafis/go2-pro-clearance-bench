@@ -7,6 +7,22 @@
 
 [English](#english) · [Português](#portugues) · [Live workbench · Demonstração](https://galafis.github.io/go2-pro-clearance-bench/) · [Examples · Exemplos](#examples)
 
+<!-- domain-workflow:start -->
+
+## Domain workflow · Fluxo do domínio
+
+```mermaid
+flowchart TD
+  A["Body dimensions and margin / Dimensões e margem"] --> B["Circumscribed disc / Disco circunscrito"]
+  C["Complete path segments / Segmentos completos"] --> D["Segment to rectangle distance / Distância de segmento a retângulo"]
+  E["Supplied obstacles / Obstáculos fornecidos"] --> D
+  B --> F["Subtract envelope radius / Subtrair raio do envoltório"]
+  D --> F
+  F --> G["Per-segment conflicts / Conflitos por segmento"]
+```
+
+<!-- domain-workflow:end -->
+
 <a id="english"></a>
 
 ## English
@@ -178,3 +194,5 @@ Projeto público relacionado: [accessible-route-lab](https://github.com/galafis/
 
 Independent work; institutional contact does not imply institutional or vendor endorsement.  
 Trabalho independente; o contato institucional não implica endosso de instituição ou fabricante.
+
+[Worked examples with expected metrics · Exemplos comentados com métricas esperadas](docs/EXPERIMENTS.md)

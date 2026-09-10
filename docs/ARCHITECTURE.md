@@ -60,3 +60,15 @@ O navegador lê as importações localmente, limita-as a 1 MB, escapa textos inf
 | `scripts/analyze.mjs` | Command-line adapter · Adaptador de linha de comando                                    |
 | `tests/`              | Behavioral and contract checks · Verificações de comportamento e contrato               |
 | `examples/`           | Synthetic inputs and expected reports · Entradas sintéticas e relatórios esperados      |
+
+## Domain decision flow · Fluxo de decisões do domínio
+
+```mermaid
+flowchart TD
+  A["Body dimensions and margin / Dimensões e margem"] --> B["Circumscribed disc / Disco circunscrito"]
+  C["Complete path segments / Segmentos completos"] --> D["Segment to rectangle distance / Distância de segmento a retângulo"]
+  E["Supplied obstacles / Obstáculos fornecidos"] --> D
+  B --> F["Subtract envelope radius / Subtrair raio do envoltório"]
+  D --> F
+  F --> G["Per-segment conflicts / Conflitos por segmento"]
+```
