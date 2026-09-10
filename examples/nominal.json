@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "scenarioId": "wide-corridor",
+  "source": "synthetic",
+  "bodyLengthM": 0.7,
+  "bodyWidthM": 0.31,
+  "marginM": 0.15,
+  "path": [
+    [0, 0],
+    [3, 0],
+    [6, 0]
+  ],
+  "obstacles": [
+    {
+      "id": "wall-north",
+      "min": [-1, 1],
+      "max": [7, 1.2]
+    },
+    {
+      "id": "wall-south",
+      "min": [-1, -1.2],
+      "max": [7, -1]
+    }
+  ]
+}

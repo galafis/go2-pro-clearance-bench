@@ -1,0 +1,29 @@
+[
+  {
+    "file": "nominal.json",
+    "label": {
+      "en": "Wide corridor",
+      "pt": "Corredor amplo"
+    },
+    "expectedStatus": "complete",
+    "report": "nominal.report.json"
+  },
+  {
+    "file": "between-waypoints.json",
+    "label": {
+      "en": "Obstacle between waypoints",
+      "pt": "Obstáculo entre pontos"
+    },
+    "expectedStatus": "review-required",
+    "report": "between-waypoints.report.json"
+  },
+  {
+    "file": "narrow-corridor.json",
+    "label": {
+      "en": "Narrow corridor",
+      "pt": "Corredor estreito"
+    },
+    "expectedStatus": "review-required",
+    "report": "narrow-corridor.report.json"
+  }
+]

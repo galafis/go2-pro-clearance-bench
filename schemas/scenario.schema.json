@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://galafis.github.io/go2-pro-clearance-bench/schemas/scenario.schema.json",
+  "title": "go2-pro-clearance-bench scenario / cenário",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "scenarioId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$"
+    },
+    "source": {
+      "enum": ["synthetic", "manual"]
+    },
+    "bodyLengthM": {
+      "type": "number",
+      "minimum": 0.01,
+      "maximum": 20
+    },
+    "bodyWidthM": {
+      "type": "number",
+      "minimum": 0.01,
+      "maximum": 20
+    },
+    "marginM": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "path": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "number",
+          "minimum": -100000,
+          "maximum": 100000
+        },
+        "minItems": 2,
+        "maxItems": 2
+      },
+      "minItems": 1,
+      "maxItems": 2000
+    },
+    "obstacles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$"
+          },
+          "min": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "minimum": -100000,
+              "maximum": 100000
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "max": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "minimum": -100000,
+              "maximum": 100000
+            },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "required": ["id", "min", "max"]
+      },
+      "minItems": 0,
+      "maxItems": 1000
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "scenarioId",
+    "source",
+    "bodyLengthM",
+    "bodyWidthM",
+    "marginM",
+    "path",
+    "obstacles"
+  ]
+}

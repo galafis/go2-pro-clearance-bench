@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "analysisVersion": "0.1.0",
+  "projectId": "go2-pro-clearance-bench",
+  "scenarioId": "wide-corridor",
+  "source": "synthetic",
+  "status": "complete",
+  "metrics": [
+    {
+      "key": "radiusM",
+      "label": {
+        "en": "Envelope radius",
+        "pt": "Raio da envoltória"
+      },
+      "value": 0.533,
+      "unit": "m"
+    },
+    {
+      "key": "minimumClearanceM",
+      "label": {
+        "en": "Minimum clearance",
+        "pt": "Menor espaço livre"
+      },
+      "value": 0.467,
+      "unit": "m"
+    },
+    {
+      "key": "conflicts",
+      "label": {
+        "en": "Conflicting segments",
+        "pt": "Segmentos em conflito"
+      },
+      "value": 0,
+      "unit": ""
+    },
+    {
+      "key": "lengthM",
+      "label": {
+        "en": "Path length",
+        "pt": "Comprimento do trajeto"
+      },
+      "value": 6,
+      "unit": "m"
+    }
+  ],
+  "findings": [],
+  "records": [
+    {
+      "segment": 0,
+      "from": [0, 0],
+      "to": [3, 0],
+      "nearestObstacleId": "wall-north",
+      "clearanceM": 0.467214,
+      "conflicts": []
+    },
+    {
+      "segment": 1,
+      "from": [3, 0],
+      "to": [6, 0],
+      "nearestObstacleId": "wall-north",
+      "clearanceM": 0.467214,
+      "conflicts": []
+    }
+  ],
+  "radiusM": 0.532786,
+  "minimumClearanceM": 0.467214,
+  "lengthM": 6,
+  "collisionFreeInModel": true,
+  "obstacles": [
+    {
+      "id": "wall-north",
+      "min": [-1, 1],
+      "max": [7, 1.2]
+    },
+    {
+      "id": "wall-south",
+      "min": [-1, -1.2],
+      "max": [7, -1]
+    }
+  ],
+  "path": [
+    [0, 0],
+    [3, 0],
+    [6, 0]
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "analysisVersion": "0.1.0",
+  "projectId": "go2-pro-clearance-bench",
+  "scenarioId": "narrow-corridor",
+  "source": "synthetic",
+  "status": "review-required",
+  "metrics": [
+    {
+      "key": "radiusM",
+      "label": {
+        "en": "Envelope radius",
+        "pt": "Raio da envoltória"
+      },
+      "value": 0.533,
+      "unit": "m"
+    },
+    {
+      "key": "minimumClearanceM",
+      "label": {
+        "en": "Minimum clearance",
+        "pt": "Menor espaço livre"
+      },
+      "value": -0.033,
+      "unit": "m"
+    },
+    {
+      "key": "conflicts",
+      "label": {
+        "en": "Conflicting segments",
+        "pt": "Segmentos em conflito"
+      },
+      "value": 2,
+      "unit": ""
+    },
+    {
+      "key": "lengthM",
+      "label": {
+        "en": "Path length",
+        "pt": "Comprimento do trajeto"
+      },
+      "value": 6,
+      "unit": "m"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "error",
+      "code": "ENVELOPE_INTERSECTION",
+      "message": {
+        "en": "Segment 0 touches or overlaps 2 obstacle envelopes.",
+        "pt": "O segmento 0 toca ou sobrepõe a envoltória de 2 obstáculos."
+      },
+      "segment": 0,
+      "obstacleIds": ["wall-north", "wall-south"]
+    },
+    {
+      "severity": "error",
+      "code": "ENVELOPE_INTERSECTION",
+      "message": {
+        "en": "Segment 1 touches or overlaps 2 obstacle envelopes.",
+        "pt": "O segmento 1 toca ou sobrepõe a envoltória de 2 obstáculos."
+      },
+      "segment": 1,
+      "obstacleIds": ["wall-north", "wall-south"]
+    }
+  ],
+  "records": [
+    {
+      "segment": 0,
+      "from": [0, 0],
+      "to": [3, 0],
+      "nearestObstacleId": "wall-north",
+      "clearanceM": -0.032786,
+      "conflicts": ["wall-north", "wall-south"]
+    },
+    {
+      "segment": 1,
+      "from": [3, 0],
+      "to": [6, 0],
+      "nearestObstacleId": "wall-north",
+      "clearanceM": -0.032786,
+      "conflicts": ["wall-north", "wall-south"]
+    }
+  ],
+  "radiusM": 0.532786,
+  "minimumClearanceM": -0.032786,
+  "lengthM": 6,
+  "collisionFreeInModel": false,
+  "obstacles": [
+    {
+      "id": "wall-north",
+      "min": [-1, 0.5],
+      "max": [7, 0.7]
+    },
+    {
+      "id": "wall-south",
+      "min": [-1, -0.7],
+      "max": [7, -0.5]
+    }
+  ],
+  "path": [
+    [0, 0],
+    [3, 0],
+    [6, 0]
+  ]
+}
