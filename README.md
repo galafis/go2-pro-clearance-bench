@@ -1,27 +1,31 @@
 # Go2 PRO Clearance Bench
 
-**Check the space swept by an entire path, including between waypoints.**  
-**Analise o espaço percorrido pelo trajeto inteiro, inclusive entre pontos.**
+**Path geometry · Geometria de trajetos**
 
-[![Checks](https://github.com/galafis/go2-pro-clearance-bench/actions/workflows/ci.yml/badge.svg)](https://github.com/galafis/go2-pro-clearance-bench/actions/workflows/ci.yml) · **v0.1.0** · **37 automated tests / testes automatizados** · **MIT**
+<p align="center"><img src="assets/project-overview.svg" width="960" alt="Workflow illustration: Path segments → Swept envelope → Clearance findings"></p>
 
-[English](#english) · [Português](#portugues) · [Live workbench · Demonstração](https://galafis.github.io/go2-pro-clearance-bench/) · [Examples · Exemplos](#examples)
+[![Checks](https://github.com/galafis/go2-pro-clearance-bench/actions/workflows/ci.yml/badge.svg)](https://github.com/galafis/go2-pro-clearance-bench/actions/workflows/ci.yml)
+[English](#english) · [Português](#portugues) · [Guided tour / Visita guiada](docs/SHOWCASE.md) · [Validation / Validação](docs/VALIDATION.md)
 
-<!-- domain-workflow:start -->
+> **EN:** Can a clear pair of waypoints hide a collision between them?<br>
+> **PT:** Dois pontos livres podem esconder um conflito entre eles?
 
-## Domain workflow · Fluxo do domínio
+## Start here · Comece aqui
 
-```mermaid
-flowchart TD
-  A["Body dimensions and margin / Dimensões e margem"] --> B["Circumscribed disc / Disco circunscrito"]
-  C["Complete path segments / Segmentos completos"] --> D["Segment to rectangle distance / Distância de segmento a retângulo"]
-  E["Supplied obstacles / Obstáculos fornecidos"] --> D
-  B --> F["Subtract envelope radius / Subtrair raio do envoltório"]
-  D --> F
-  F --> G["Per-segment conflicts / Conflitos por segmento"]
-```
+| Goal · Objetivo | Where to go · Por onde começar |
+| --- | --- |
+| Understand a real example · Entender um exemplo concreto | [Walkthrough / Roteiro](docs/EXPERIMENTS.md) |
+| Reproduce and compare · Reproduzir e comparar | [Evidence tour / Visita às evidências](docs/SHOWCASE.md) |
+| Inspect the checks · Inspecionar as verificações | [Validation record / Registro de validação](docs/VALIDATION.md) · [CI](https://github.com/galafis/go2-pro-clearance-bench/actions/workflows/ci.yml) |
+| Explore in the browser · Explorar no navegador | [Public demonstration / Demonstração pública](https://galafis.github.io/go2-pro-clearance-bench/) |
 
-<!-- domain-workflow:end -->
+**Example result · Resultado do exemplo:** Envelope radius / Raio da envoltÃ³ria: **0.533 m**; Minimum clearance / Menor espaÃ§o livre: **-0.533 m**; Conflicting segments / Segmentos em conflito: **1 **
+
+**Try a comparison · Experimente uma comparação**<br>
+**EN:** Compare the wide corridor with the between-waypoints obstacle and the narrow corridor.<br>
+**PT:** Compare corredor amplo, obstáculo entre pontos e corredor estreito.
+
+[![Existing application preview / Prévia existente da aplicação](assets/preview-en.svg)](https://galafis.github.io/go2-pro-clearance-bench/)
 
 <a id="english"></a>
 
@@ -189,10 +193,10 @@ Projeto público relacionado: [accessible-route-lab](https://github.com/galafis/
 
 ## Maintainer · Responsável
 
-**Gabriel Demetrios Lafis** · Brazil / Brasil  
+**Gabriel Demetrios Lafis** · Brazil / Brasil<br>
 **[gabrieldemetrioslafis@usp.br](mailto:gabrieldemetrioslafis@usp.br)** · [GitHub](https://github.com/galafis)
 
-Independent work; institutional contact does not imply institutional or vendor endorsement.  
+Independent work; institutional contact does not imply institutional or vendor endorsement.<br>
 Trabalho independente; o contato institucional não implica endosso de instituição ou fabricante.
 
 [Worked examples with expected metrics · Exemplos comentados com métricas esperadas](docs/EXPERIMENTS.md)
